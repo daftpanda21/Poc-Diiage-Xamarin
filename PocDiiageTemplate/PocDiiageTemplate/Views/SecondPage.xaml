@@ -1,11 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:converter="clr-namespace:PocDiiageTemplate"
              x:Class="PocDiiageTemplate.Views.SecondPage"
              Title="{Binding Title}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:PriceNotNullConverter x:Key="stringNotNullConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
-        <Label                 
-                 Text="{Binding Title}" />
-        <Label Text="Test"/>
+        <Label Text="{Binding Title}" />
+        <Label Text="Pseudo :"/>
+        <Entry Text="{Binding Pseudo}"/>
+        <Button Text="Next Exercice avec passage pseudo​​​​" Command="{Binding buttonClick}" 
+                IsVisible="{Binding Pseudo, Converter={StaticResource stringNotNullConverter}}" />
     </StackLayout>
 </ContentPage>

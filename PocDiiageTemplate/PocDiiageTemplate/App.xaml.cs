@@ -10,6 +10,7 @@ namespace PocDiiageTemplate
 {
     public partial class App
     {
+      
         public App(IPlatformInitializer initializer)
             : base(initializer)
         {
@@ -29,6 +30,7 @@ namespace PocDiiageTemplate
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
             containerRegistry.RegisterForNavigation<SecondPage, SecondPageViewModel>();
+            containerRegistry.RegisterForNavigation<ThirdPage, ThirdPageViewModel>();
         }
     }
 }
